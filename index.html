@@ -17,32 +17,138 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
+
+              
+<style>
+input { text-align:right; }
+</style>
+
+
+    </style>
         
-              <input type="text" name="champ" id="champ" />
+           <div class="container-fluid">
+
+           <div class="row" style="padding-top:20px">
+
+             <div class="col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+              <div class="panel panel-primary">
+              	<div class="panel-heading">
+              		<h3 class="panel-title">Calculatrice</h3>
+              	</div>
+              	<div class="panel-body">
+
+              	<div class="row">
+                  <div class="col-xs-12">
+                     <input type="text" name="operation" id="operation" class="form-control" readonly />
+                     <input type="text" name="resultat" id="resultat" class="form-control" readonly />
+                 </div> 
+                </div>    
+                 <br>
+
+                 <div class="row">
+                    <div class="col-xs-3">
+                     <button type="button" class="btn btn-default">7</button>
+                    </div>  
+                    <div class="col-xs-3">
+                     <button type="button" class="btn btn-default">8</button>
+                    </div>  
+                    <div class="col-xs-3">
+                     <button type="button" class="btn btn-default">9</button>
+                    </div>  
+                    <div class="col-xs-3">  
+                     <button type="button" class="btn btn-default">*</button>    
+                    </div>   
+                      <br><br>    
+                    <div class="col-xs-3">
+                     <button type="button" class="btn btn-default">4</button>
+                    </div>
+                    <div class="col-xs-3"> 
+                     <button type="button" class="btn btn-default">5</button>
+                    </div>
+                    <div class="col-xs-3">   
+                     <button type="button" class="btn btn-default">6</button>
+                    </div>
+                    <div class="col-xs-3">    
+                     <button type="button" class="btn btn-default">-</button>
+                    </div>   
+                    <br><br>   
+                    <div class="col-xs-3">
+                     <button type="button" class="btn btn-default">1</button>
+                    </div>
+                    <div class="col-xs-3">   
+                     <button type="button" class="btn btn-default">2</button>
+                    </div> 
+                    <div class="col-xs-3">  
+                     <button type="button" class="btn btn-default">3</button>
+                    </div>
+                    <div class="col-xs-3">    
+                     <button type="button" class="btn btn-default">/</button>
+                    </div>  
+                    <br><br>      
+                    <div class="col-xs-3">
+                     <button type="button" class="btn btn-default">c</button>
+                    </div> 
+                    <div class="col-xs-3"> 
+                     <button type="button" class="btn btn-default">0</button>
+                    </div>
+                    <div class="col-xs-3">  
+                     <button type="button" class="btn btn-default">+</button>
+                    </div>
+                    <div class="col-xs-3">  
+                     <button type="button" class="btn btn-default">=</button>
+                    </div>   
+
+                    </div> 
+                   
+
+            </div> <!-- Fin du div class="panel-body" -->
+
+         </div>
+              		
+              
+              	</div>
+              </div>
+
+              </div>
+
+
+              <script>
+
+              var operation = "";
+              var resultat  = ""; 
+
+
+              $(".btn").click( function(){
+
+              button = $(this).html();
+
+              
+              if(button == "=")
+              {
+              	resultat = eval(operation);
+              }
+                else if(button == "c")
+                {
+                  resultat = "";
+                  operation = "";
+                }
+
+                 else
+                 {
+                 	operation = operation+button;
+                 }
+
+                 
+                 $("#operation").val(operation);
+                 $("#resultat").val(resultat);
+
+
+              });
+
+              </script>
  
     </body>
 </html>
 
 
 
-<script>
-
-
-$(document).ready(function(){
-
-$("#champ").val(multiplication(4,6));
-
-
-function multiplication(a,b)
-{
-
-	return a*b ;
-}
-
-});
-
-
-
-
-
-</script>
